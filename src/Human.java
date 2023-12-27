@@ -1,14 +1,17 @@
 import java.util.Scanner;
 
 abstract class Human {
+    protected Scanner scanner = new Scanner(System.in);
+
+    //region Variables
     private String name;
     private String surname;
     private int age;
     private long id;
-
+    //endregion
 
     public Human() throws Exception {
-        getInformations();
+        setInformation();
     }
 
     public Human(String name, String surname, int age, long id) throws Exception {
@@ -18,7 +21,7 @@ abstract class Human {
         setId(id);
     }
 
-
+    //region Getters-Setters
     public String getName() {
         return name;
     }
@@ -67,9 +70,7 @@ abstract class Human {
     }
 
 
-    protected void getInformations() throws Exception{
-        Scanner scanner = new Scanner(System.in);
-
+    protected void setInformation() throws Exception{
         System.out.println("Please enter the name:");
         setName(scanner.nextLine());
 
@@ -82,11 +83,12 @@ abstract class Human {
         System.out.println("Please enter the id number:");
         setId(scanner.nextLong());
     }
+    //endregion
 
-     public void showInformations(){
-        System.out.println("Name: " + this.name);
-        System.out.println("Surname: " + this.surname);
-        System.out.println("Age: " + this.age);
-        System.out.println("Id number: " + this.id);
+    public void showInformation(){
+        System.out.println("Name: " + name);
+        System.out.println("Surname: " + surname);
+        System.out.println("Age: " + age);
+        System.out.println("Id number: " + id);
      }
 }
