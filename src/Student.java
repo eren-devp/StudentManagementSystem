@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Student extends Human {
     //region Variables
     private String studentClass;
@@ -7,11 +9,13 @@ public class Student extends Human {
     public Student() throws Exception{
         super();
 
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Please enter the student's class:");
         setStudentClass(scanner.nextLine());
     }
 
-    public Student(String name, String surname, int age, long id, String studentClass, Teacher teacher) throws Exception {
+    public Student(final String name, final String surname, final int age, final long id, final String studentClass, final Teacher teacher) throws Exception {
         super(name, surname, age, id);
 
         setStudentClass(studentClass);
@@ -23,7 +27,8 @@ public class Student extends Human {
         return studentClass;
     }
 
-    public void setStudentClass(String studentClass) throws Exception {
+    public void setStudentClass(final String studentClass) throws Exception {
+        System.out.println(studentClass);
         if(studentClass.isBlank())
             throw new Exception("Student class cannot be blank!");
 
@@ -35,7 +40,7 @@ public class Student extends Human {
         return teacher;
     }
 
-    public void setTeacher(Teacher teacher) {
+    public void setTeacher(final Teacher teacher) {
         this.teacher = teacher;
     }
     //endregion

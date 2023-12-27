@@ -23,6 +23,7 @@ public class Main {
                     case 2:
                         Student student = new Student();
                         break;
+
                     case 3:
                         break;
 

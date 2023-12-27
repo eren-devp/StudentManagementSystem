@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 abstract class Human {
-    protected Scanner scanner = new Scanner(System.in);
-
     //region Variables
     private String name;
     private String surname;
@@ -14,7 +12,7 @@ abstract class Human {
         setInformation();
     }
 
-    public Human(String name, String surname, int age, long id) throws Exception {
+    public Human(final String name, final String surname, final int age, final long id) throws Exception {
         setName(name);
         setSurname(surname);
         setAge(age);
@@ -26,7 +24,7 @@ abstract class Human {
         return name;
     }
 
-    public void setName(String name) throws Exception {
+    public void setName(final String name) throws Exception {
         if(name.isBlank())
             throw new Exception("Name cannot be blank!");
 
@@ -38,7 +36,7 @@ abstract class Human {
         return surname;
     }
 
-    public void setSurname(String surname) throws Exception {
+    public void setSurname(final String surname) throws Exception {
         if(surname.isBlank())
             throw new Exception("Surname cannot be blank.");
 
@@ -50,7 +48,7 @@ abstract class Human {
         return age;
     }
 
-    public void setAge(int age) throws Exception {
+    public void setAge(final int age) throws Exception {
         if(age <= 0 || age >= 100)
             throw new Exception("Please enter a valid age!");
 
@@ -62,7 +60,7 @@ abstract class Human {
         return id;
     }
 
-    public void setId(long id) throws Exception {
+    public void setId(final long id) throws Exception {
         if(id <= 0)
             throw new Exception("Please enter a valid ID number!");
 
@@ -71,6 +69,8 @@ abstract class Human {
 
 
     protected void setInformation() throws Exception{
+        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Please enter the name:");
         setName(scanner.nextLine());
 
