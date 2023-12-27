@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Student extends Human {
     //region Variables
     private String studentClass;
+
     private Teacher teacher;
     //endregion
 
@@ -28,19 +29,17 @@ public class Student extends Human {
     }
 
     public void setStudentClass(final String studentClass) throws Exception {
-        System.out.println(studentClass);
         if(studentClass.isBlank())
             throw new Exception("Student class cannot be blank!");
 
         this.studentClass = studentClass;
     }
 
-
     public Teacher getTeacher() {
         return teacher;
     }
-
     public void setTeacher(final Teacher teacher) {
+        teacher.addStudent(this);
         this.teacher = teacher;
     }
     //endregion

@@ -1,11 +1,14 @@
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicLong;
 
 abstract class Human {
     //region Variables
     private String name;
     private String surname;
     private int age;
-    private long id;
+    private long idNumber;
+    protected static final AtomicLong idCounter = new AtomicLong();
+    protected final long id = idCounter.getAndIncrement();
     //endregion
 
     public Human() throws Exception {
@@ -16,7 +19,7 @@ abstract class Human {
         setName(name);
         setSurname(surname);
         setAge(age);
-        setId(id);
+        setIdNumber(id);
     }
 
     //region Getters-Setters
@@ -56,15 +59,15 @@ abstract class Human {
     }
 
 
-    public long getId() {
-        return id;
+    public long getIdNumber() {
+        return idNumber;
     }
 
-    public void setId(final long id) throws Exception {
-        if(id <= 0)
+    public void setIdNumber(final long idNumber) throws Exception {
+        if(idNumber <= 0)
             throw new Exception("Please enter a valid ID number!");
 
-        this.id = id;
+        this.idNumber = idNumber;
     }
 
 
@@ -81,14 +84,18 @@ abstract class Human {
         setAge(scanner.nextInt());
 
         System.out.println("Please enter the id number:");
-        setId(scanner.nextLong());
+        setIdNumber(scanner.nextLong());
     }
     //endregion
 
     public void showInformation(){
-        System.out.println("Name: " + name);
+        System.out.println("\nName: " + name);
         System.out.println("Surname: " + surname);
         System.out.println("Age: " + age);
         System.out.println("Id number: " + id);
-     }
+    }
+
+    public long getId(){
+        return id;
+    }
 }
