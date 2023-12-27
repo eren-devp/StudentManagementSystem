@@ -1,5 +1,5 @@
--> Student management system made with Java OOP.
--> Encapsulation applied.
--> DRY (don't repeat yourself) applied.
--> Made it to improve myself.
--> My first Java project.
+-> Student management system made with <strong>Java OOP</strong>.<br>
+-> <strong>Encapsulation</strong> applied.<br>
+-> <strong>DRY</strong> (don't repeat yourself) applied.<br>
+-> Made it to improve myself.<br>
+-> My first Java project.<br>
