@@ -7,8 +7,8 @@ abstract class Human {
     private String surname;
     private int age;
     private long idNumber;
-    protected static final AtomicLong idCounter = new AtomicLong();
-    protected final long id = idCounter.getAndIncrement();
+    private static final AtomicLong idCounter = new AtomicLong();
+    private final long id = idCounter.getAndIncrement();
     //endregion
 
     public Human() throws Exception {

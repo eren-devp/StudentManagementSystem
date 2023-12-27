@@ -7,7 +7,7 @@ public class Main {
             boolean run = true;
 
             Teacher testTeacher = new Teacher("Ece", "Gelal Soyak", 30, 1000000000L, 50000, "Computer Science");
-            Teacher testTeacher2 = new Teacher("Ecsde", "Gelasdasal Soyak", 30, 1000000000L, 50000, "Computer Science");
+            Teacher testTeacher2 = new Teacher("Cigdem", "Eris", 30, 1000000000L, 50000, "Computer Science");
             Student testStudent = new Student("Talha", "Genc", 20, 10000000000L, "Computer Science", testTeacher);
 
             while (run){
